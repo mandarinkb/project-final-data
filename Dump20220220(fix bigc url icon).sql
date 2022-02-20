@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `WEB_SCRAPPING` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `WEB_SCRAPPING`;
--- MySQL dump 10.13  Distrib 5.7.33, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.37, for Linux (x86_64)
 --
--- Host: 188.166.189.133    Database: WEB_SCRAPPING
+-- Host: 127.0.0.1    Database: WEB_SCRAPPING
 -- ------------------------------------------------------
--- Server version	5.5.5-10.3.27-MariaDB-1:10.3.27+maria~focal
+-- Server version	5.5.5-10.3.22-MariaDB-1:10.3.22+maria~bionic
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `SCHEDULE` (
   `METHOD_NAME` varchar(50) DEFAULT NULL,
   `PROJECT_NAME` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`SCHEDULE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `SWITCH_DATABASE` (
   `DATABASE_NAME` varchar(50) DEFAULT NULL,
   `DATABASE_STATUS` char(1) DEFAULT NULL,
   PRIMARY KEY (`DATABASE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,10 +79,10 @@ DROP TABLE IF EXISTS `USERS`;
 CREATE TABLE `USERS` (
   `USER_ID` int(20) NOT NULL AUTO_INCREMENT,
   `PASSWORD` varchar(250) DEFAULT NULL,
-  `ROLE` varchar(20) DEFAULT NULL,
+  `USER_ROLE` varchar(20) DEFAULT NULL,
   `USERNAME` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`USER_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `USERS` (
 
 LOCK TABLES `USERS` WRITE;
 /*!40000 ALTER TABLE `USERS` DISABLE KEYS */;
-INSERT INTO `USERS` VALUES (1,'$2a$10$9m8yCwd/OnvmRAu8zuLTT.ZoI1JxHzuVnlm34dUT.aWmw43Hx.JMa','admin','mandarinkb'),(42,'$2a$10$FsnKgOVha6FEH7VhVNNNze.OUkGrIfojCwnWd2wI2v7G6ajK0klyW','assistant','charan');
+INSERT INTO `USERS` VALUES (1,'$2a$10$9m8yCwd/OnvmRAu8zuLTT.ZoI1JxHzuVnlm34dUT.aWmw43Hx.JMa','admin','mandarinkb'),(16,'$2a$10$WfDlzJ141A9rdvNdXzc1oeXgjHQ.onckvt67CdqWeN2f5XMuLiZ3e','admin','admin'),(18,'$2a$10$6wtPNH0wy76B0RxRj74Dze0dmvgFyuchClq7FjZMgGBG7Te4ass9G','admin','aaa');
 /*!40000 ALTER TABLE `USERS` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,13 +103,13 @@ DROP TABLE IF EXISTS `WEB`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `WEB` (
-  `Web_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `WEB_ID` int(11) NOT NULL AUTO_INCREMENT,
   `WEB_NAME` varchar(50) DEFAULT NULL,
   `WEB_URL` varchar(250) DEFAULT NULL,
   `WEB_STATUS` char(1) DEFAULT NULL,
   `ICON_URL` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`Web_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`WEB_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +118,7 @@ CREATE TABLE `WEB` (
 
 LOCK TABLES `WEB` WRITE;
 /*!40000 ALTER TABLE `WEB` DISABLE KEYS */;
-INSERT INTO `WEB` VALUES (49,'tescolotus','https://shoponline.tescolotus.com/groceries/th-TH/promotions','1','https://www.tescolotus.com/assets/theme2018/tl-theme/img/logo.png'),(67,'makroclick','https://www.makroclick.com/th','1','https://www.makroclick.com/static/images/logo.png'),(68,'bigc','https://www.bigc.co.th/','1','https://www.bigc.co.th/_nuxt/img/CI-Bigc-resize.108a02e.png');
+INSERT INTO `WEB` VALUES (49,'tescolotus','https://shoponline.tescolotus.com/groceries/th-TH/promotions','1','https://seeklogo.com/images/T/tesco-lotus-logo-147366DB17-seeklogo.com.png'),(67,'makroclick','https://www.makroclick.com/th','1','https://www.makroclick.com/static/images/logo.png'),(68,'bigc','https://www.bigc.co.th/','1','https://www.bigc.co.th/_nuxt/img/Logo-BigC-2021.1900273.png');
 /*!40000 ALTER TABLE `WEB` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-02 15:05:15
+-- Dump completed on 2022-02-20 15:22:07
